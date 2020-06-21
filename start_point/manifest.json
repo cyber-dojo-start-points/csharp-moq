@@ -1,0 +1,12 @@
+{
+  "image_name": "cyberdojofoundation/csharp_moq",
+  "display_name": "C#, Moq",
+  "visible_filenames": [
+    "HikerTest.cs",
+    "IHiker.cs",
+    "cyber-dojo.sh"
+  ],
+  "filename_extension": [ ".cs" ],
+  "max_seconds": 10,
+  "tab_size": 4
+}
