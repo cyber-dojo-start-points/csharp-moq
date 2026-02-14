@@ -1,14 +1,15 @@
 {
-  "image_name": "cyberdojofoundation/csharp_moq:368990c",
-  "display_name": "C#, Moq",
+  "image_name": "ghcr.io/cyber-dojo-languages/csharp_moq:40d9862",
+  "display_name": "C# 10.0.103, Moq 4.20.72",
   "visible_filenames": [
+    "cyber-dojo.sh",
     "HikerTest.cs",
     "IHiker.cs",
-    "cyber-dojo.sh"
+    "dojo.csproj"
   ],
   "filename_extension": [
     ".cs"
   ],
-  "max_seconds": 10,
+  "max_seconds": 15,
   "tab_size": 4
 }

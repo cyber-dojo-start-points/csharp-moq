@@ -1,26 +1,16 @@
 
-trap tidy_up EXIT
-function tidy_up()
+# --------------------------------------------------------------
+# Text files under /sandbox are automatically returned...
+source ~/cyber_dojo_fs_cleaners.sh
+
+function cyber_dojo_exit()
 {
-  # cyber-dojo returns text files under /sandbox that are
-  # created/deleted/changed. In here you can remove any
-  # such files you don't want returned to the browser.
-  [ ! -f TestResult.xml ] || rm TestResult.xml
+  : # ...Remove files we don't want returned.
+  cyber_dojo_delete_dirs /sandbox/bin 
+  cyber_dojo_delete_dirs /sandbox/obj
+  #cyber_dojo_delete_files ...
 }
+trap cyber_dojo_exit EXIT SIGTERM
 
-MOQ_PATH=/moq/Moq.4.7.99/lib/net45
-CASTLE_PATH=/moq/Castle.Core.4.1.1/lib/net45
-NUNIT_PATH=/moq/lib/net45
-
-export MONO_PATH=${MOQ_PATH}:${CASTLE_PATH}:${NUNIT_PATH}
-
-mcs -t:library \
-  -r:${MOQ_PATH}/Moq.dll \
-  -r:${CASTLE_PATH}/Castle.Core.dll \
-  -r:${NUNIT_PATH}/nunit.framework.dll \
-  -out:RunTests.dll *.cs
-
-if [ $? -eq 0 ]; then
-  NUNIT_RUNNERS_PATH=/moq/tools
-  mono ${NUNIT_RUNNERS_PATH}/nunit3-console.exe --noheader ./RunTests.dll
-fi
+dotnet restore --source /home/sandbox/.nuget/packages/
+dotnet test --no-restore
