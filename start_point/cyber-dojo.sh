@@ -20,7 +20,7 @@ trap cyber_dojo_exit EXIT SIGTERM
 
 #FALLBACK, SLOWER ~8.1s: 
 # comment in the next line if compilation fails
-#time (dotnet restore --source /home/sandbox/.nuget/packages/ && dotnet test --no-restore --nologo ) && exit
+#time (dotnet restore --source /home/sandbox/.nuget/packages/ && dotnet test --no-restore --nologo ) ; exit
 
 ln -s ~/.nuget/packages/moq/4.20.72/lib/net6.0/Moq.dll Moq.dll
 ln -s ~/.nuget/packages/castle.core/5.1.1/lib/net6.0/Castle.Core.dll Castle.Core.dll
