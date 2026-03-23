@@ -40,4 +40,5 @@ time (dotnet /usr/share/dotnet/sdk/10.0.103/Roslyn/bincore/csc.dll \
   -r:/usr/share/dotnet/shared/Microsoft.NETCore.App/10.0.3/System.Private.CoreLib.dll \
   -r:/usr/share/dotnet/shared/Microsoft.NETCore.App/10.0.3/System.Runtime.dll \
   -r:/usr/share/dotnet/shared/Microsoft.NETCore.App/10.0.3/System.Linq.Expressions.dll \
+  -r:/usr/share/dotnet/shared/Microsoft.NETCore.App/10.0.3/System.Linq.dll \
   *.cs && /home/sandbox/.dotnet/tools/nunit dojo.dll --noheader --noresult --nocolor )
